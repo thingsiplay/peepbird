@@ -236,6 +236,26 @@ mailboxes setup:
 
 Here are some ideas of where or how to use the program.
 
+### Fly script
+
+A little script to start Thunderbird if it's not running, otherwise change
+focus to Thunderbird window if any unread mail is found. Intended use case
+might be some custom setup where on a mouse click in example would run the
+script.
+
+```bash
+#!/usr/bin/env bash
+
+if ! pidof -q thunderbird; then
+	thunderbird -mail </dev/null &>/dev/null &
+	disown
+else
+	if [ "$(peepbird -C "Mail/smart mailboxes")" -gt 0 ]; then
+		thunderbird -mail </dev/null &>/dev/null
+	fi
+fi
+```
+
 ### KDE Plasma widget
 
 The program can be used in various places, such as bars for periodic checking.
