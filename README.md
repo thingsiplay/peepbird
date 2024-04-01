@@ -33,7 +33,7 @@ package, unpack and make the program executable. From here you could in example
 put it in one of the directories in your system `$PATH` .
 
 ```sh
-curl -LO "https://github.com/thingsiplay/peepbird/releases/latest/download/peepbird-linux.tar.gz
+curl -LO "https://github.com/thingsiplay/peepbird/releases/latest/download/peepbird-linux.tar.gz"
 tar -xf peepbird-linux.tar.gz
 chmod +x peepbird
 ```
