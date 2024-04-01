@@ -1,0 +1,24 @@
+[package]
+authors = ["Tuncay D. (thingsiplay)"]
+name = "peepbird"
+description = "Lookup count of unread Thunderbird mails."
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/thingsiplay/peepbird"
+
+[dependencies]
+anyhow = "1.0.81"
+clap = { version = "4.5.3", features = ["derive"] }
+serde = "1.0.197"
+serde_derive = "1.0.197"
+shellexpand = "3.1.0"
+toml = "0.8.12"
+
+[profile.release]
+opt-level = "z"
+codegen-units = 1
+lto = true
+strip = "symbols"
+panic = "abort"
